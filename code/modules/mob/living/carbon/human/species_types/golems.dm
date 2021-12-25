@@ -174,10 +174,10 @@
 
 /datum/species/golem/silver/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()
-	ADD_TRAIT(C, TRAIT_HOLY, SPECIES_TRAIT)
+	ADD_TRAIT(C, TRAIT_HOLY, TRAIT_ANTIMAGIC, SPECIES_TRAIT)
 
 /datum/species/golem/silver/on_species_loss(mob/living/carbon/C)
-	REMOVE_TRAIT(C, TRAIT_HOLY, SPECIES_TRAIT)
+	REMOVE_TRAIT(C, TRAIT_HOLY, TRAIT_ANTIMAGIC, SPECIES_TRAIT)
 	..()
 // Softer and faster, but conductive
 /datum/species/golem/copper
