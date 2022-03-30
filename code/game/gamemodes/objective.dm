@@ -496,6 +496,7 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 	name = "escape"
 	explanation_text = "Escape on the shuttle or an escape pod alive and without being in custody."
 	team_explanation_text = "Have all members of your team escape on a shuttle or pod alive, without being in custody."
+	martyr_compatible FALSE
 
 /datum/objective/escape/check_completion()
 	// Require all owners escape safely.
@@ -508,6 +509,7 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 	name = "escape"
 	explanation_text = "Escape on the shuttle or an escape pod alive and without being in custody."
 	team_explanation_text = "Have at least one of your members escape on the shuttle or escape pod alive and without being in custody."
+	martyr_compatible FALSE
 
 /datum/objective/escape/single/check_completion()
 	// Require all owners escape safely.
@@ -520,6 +522,7 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 	name = "escape with identity"
 	var/target_real_name // Has to be stored because the target's real_name can change over the course of the round
 	var/target_missing_id
+	martyr_compatible FALSE
 
 /datum/objective/escape/escape_with_identity/is_valid_target(datum/mind/possible_target)
 	for(var/datum/mind/M as() in get_owners())
@@ -563,7 +566,7 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 /datum/objective/survive
 	name = "survive"
 	explanation_text = "Stay alive until the end."
-
+    martyr_compatible FALSE
 /datum/objective/survive/check_completion()
 	for(var/datum/mind/M as() in get_owners())
 		if(!considered_alive(M))
